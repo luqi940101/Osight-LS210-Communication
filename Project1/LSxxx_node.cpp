@@ -28,75 +28,6 @@ extern POINT1    DataIntensity1[2000];
 extern POINT2    DataIntensity2[2000];
 
 
-/*BITS32  LSXXX(std::string hostPC, BITS32 portPC, BITS8 IntensityStatus)
-{
-
-	BITS8   err;
-
-	//std::string hostPC="192.168.1.100";
-	//BITS32  portPC=5500;
-	
-	while (1)
-	{
-		laser.connect(hostPC, portPC);
-		if (!laser.isConnected())
-		{
-			continue;
-		}
-		printf("Network connection OK \r\n");
-
-
-		do
-		{
-			err = laser.ParaSync();
-		} while (0 != err);
-		printf("Parameter synchronization OK\r\n");
-
-		//g_stRealPara.ucIntensityStatus = 0;
-		//g_stRealPara.ucIntensityStatus = 1;
-		//g_stRealPara.ucIntensityStatus = 2;
-
-
-		g_stRealPara.ucIntensityStatus = IntensityStatus;
-
-		do
-		{
-			err = laser.ParaConfiguration();
-		} while (0 != err);
-		printf("Parameter configuration OK\r\n");
-
-		laser.StartMeasureTransmission();
-
-
-		printf("Start getting the Measurements ...\r\n");
-		while (1)
-		{
-			err = laser.GetLidarMeasData();
-			if (0 == err)
-			{
-				//test: Print receiving ridar data 
-				for (int i = 0; i<1080; i++)
-				{
-					printf("DataIntensity0[ %d].ulDistance=%d\r\n", i, DataIntensity0[i].ulDistance);
-					printf("DataIntensity1[ %d].ulDistance=%d\r\n", i, DataIntensity1[i].ulDistance);
-					printf("DataIntensity1[ %d].ucIntensity=%d\r\n", i, DataIntensity1[i].ucIntensity);
-					printf("DataIntensity2[ %d].ulDistance=%d\r\n", i, DataIntensity2[i].ulDistance);
-					printf("DataIntensity2[ %d].usIntensity=%d\r\n\r\n", i, DataIntensity2[i].usIntensity);
-				}
-
-			}
-			else
-			{
-				//break;
-			}
-
-		}
-
-	}
-
-	return 0;
-}
-*/
 BITS32  LSXXX(std::string hostPC, BITS32 portPC, BITS8 IntensityStatus, BITS8 *pAlarmPara)
 {
 
@@ -159,11 +90,14 @@ BITS32  LSXXX(std::string hostPC, BITS32 portPC, BITS8 IntensityStatus, BITS8 *p
 				/*test: Print receiving ridar data */
 				for (int i = 0; i<1080; i++)
 				{
-					printf("DataIntensity0[ %d].ulDistance=%d\r\n", i, DataIntensity0[i].ulDistance);
-					printf("DataIntensity1[ %d].ulDistance=%d\r\n", i, DataIntensity1[i].ulDistance);
-					printf("DataIntensity1[ %d].ucIntensity=%d\r\n", i, DataIntensity1[i].ucIntensity);
-					printf("DataIntensity2[ %d].ulDistance=%d\r\n", i, DataIntensity2[i].ulDistance);
-					printf("DataIntensity2[ %d].usIntensity=%d\r\n\r\n", i, DataIntensity2[i].usIntensity);
+					//printf("DataIntensity0[ %d].ulDistance=%d\r\n", i, DataIntensity0[i].ulDistance);
+					//printf("DataIntensity1[ %d].ulDistance=%d\r\n", i, DataIntensity1[i].ulDistance);
+					//printf("DataIntensity1[ %d].ucIntensity=%d\r\n", i, DataIntensity1[i].ucIntensity);
+					//printf("DataIntensity2[ %d].ulDistance=%d\r\n", i, DataIntensity2[i].ulDistance);
+					//printf("DataIntensity2[ %d].usIntensity=%d\r\n\r\n", i, DataIntensity2[i].usIntensity);
+					//printf("DataIntensity2[ %d].usIntensity=%d\r\n\r\n", i, DataIntensity2[i].usIntensity);
+					//printf("DataIntensity1[ %d].ulOutputStatus=%d\r\n\r\n", i, DataIntensity1[i].ulOutputStatus);
+					//printf("DataIntensity1[ %d].ulOutputStatus=%04x\r\n\r\n", i, DataIntensity1[i].ulOutputStatus);
 				}
 
 			}

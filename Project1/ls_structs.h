@@ -182,6 +182,7 @@ typedef struct
 {
 	BITS32 ulDistance;
 	BITS8  ucIntensity;
+	BITS32 ulOutputStatus;
 }POINT1;
 
 typedef struct

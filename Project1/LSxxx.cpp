@@ -312,6 +312,8 @@ INT32 LSxxx::GetLidarMeasData()
 					for (ulIndex = 0; ulIndex<g_stMeasDataNoIntensity.usPackMeasPointNum; ulIndex++)
 					{
 						DataIntensity0[g_stMeasDataNoIntensity.ucCurrentPackNO*g_stMeasDataNoIntensity.usPackMeasPointNum + ulIndex].ulDistance = g_stMeasDataNoIntensity.astPoint0[ulIndex].ulDistance;
+						//printf("Get point0 measurement");
+						printf("DataIntensity0.ulOutputStatus=%04x\r\n\r\n", g_stMeasDataNoIntensity.ulOutputStatus);
 					}
 					if ((g_stMeasDataNoIntensity.ucCurrentPackNO + 1) == g_stMeasDataNoIntensity.ucTotalPackNum)
 					{
@@ -325,6 +327,9 @@ INT32 LSxxx::GetLidarMeasData()
 					{
 						DataIntensity1[g_stMeasDataHaveIntensity1.ucCurrentPackNO*g_stMeasDataHaveIntensity1.usPackMeasPointNum + ulIndex].ulDistance = g_stMeasDataHaveIntensity1.astPoint1[ulIndex].ulDistance;
 						DataIntensity1[g_stMeasDataHaveIntensity1.ucCurrentPackNO*g_stMeasDataHaveIntensity1.usPackMeasPointNum + ulIndex].ucIntensity = g_stMeasDataHaveIntensity1.astPoint1[ulIndex].ucIntensity;
+						DataIntensity1[g_stMeasDataHaveIntensity1.ucCurrentPackNO*g_stMeasDataHaveIntensity1.usPackMeasPointNum + ulIndex].ulOutputStatus = g_stMeasDataHaveIntensity1.ulOutputStatus;
+						printf("Get point1 measurement");
+						printf("DataIntensity1.ulOutputStatus=%04x\r\n\r\n", g_stMeasDataHaveIntensity1.ulOutputStatus);
 					}
 
 					if ((g_stMeasDataHaveIntensity1.ucCurrentPackNO + 1) == g_stMeasDataHaveIntensity1.ucTotalPackNum)
@@ -339,6 +344,7 @@ INT32 LSxxx::GetLidarMeasData()
 					{
 						DataIntensity2[g_stMeasDataHaveIntensity2.ucCurrentPackNO*g_stMeasDataHaveIntensity2.usPackMeasPointNum + ulIndex].ulDistance = g_stMeasDataHaveIntensity2.astPoint2[ulIndex].ulDistance;
 						DataIntensity2[g_stMeasDataHaveIntensity2.ucCurrentPackNO*g_stMeasDataHaveIntensity2.usPackMeasPointNum + ulIndex].usIntensity = g_stMeasDataHaveIntensity2.astPoint2[ulIndex].usIntensity;
+				//		DataIntensity2[g_stMeasDataHaveIntensity2.ucCurrentPackNO*g_stMeasDataHaveIntensity2.usPackMeasPointNum + ulIndex].ulOutputStatus = g_stMeasDataHaveIntensity2.astPoint2[ulIndex].ulOutputStatus;
 					}
 
 					if ((g_stMeasDataHaveIntensity2.ucCurrentPackNO + 1) == g_stMeasDataHaveIntensity2.ucTotalPackNum)
