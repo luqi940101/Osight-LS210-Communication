@@ -313,7 +313,7 @@ INT32 LSxxx::GetLidarMeasData()
 					{
 						DataIntensity0[g_stMeasDataNoIntensity.ucCurrentPackNO*g_stMeasDataNoIntensity.usPackMeasPointNum + ulIndex].ulDistance = g_stMeasDataNoIntensity.astPoint0[ulIndex].ulDistance;
 						//printf("Get point0 measurement");
-						printf("DataIntensity0.ulOutputStatus=%04x\r\n\r\n", g_stMeasDataNoIntensity.ulOutputStatus);
+						printf("DataIntensity0.ulOutputStatus=%06x\r\n\r\n", g_stMeasDataNoIntensity.ulOutputStatus);
 					}
 					if ((g_stMeasDataNoIntensity.ucCurrentPackNO + 1) == g_stMeasDataNoIntensity.ucTotalPackNum)
 					{
