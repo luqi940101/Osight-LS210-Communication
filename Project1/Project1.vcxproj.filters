@@ -21,6 +21,9 @@
     <ClCompile Include="LSxxx_node.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Encapsulation_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ls_structs.h">
